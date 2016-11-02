@@ -4,7 +4,7 @@
  * @author:     Panex
  * @datetime:   2016-10-30 9:33
  * @version:    0.3
- * @function:   可以任意生成的验证码长度
+ * @description:   可以任意生成的验证码长度
  *
  * 0.3：将字体文件改为用参数传入，提升了函数的可移植性
  */

@@ -4,7 +4,7 @@
  * @author:     Panex
  * @datetime:   2016-10-30 20:11
  * @version:    0.1
- * @function:   从一张图片中截取一部分，并将之等比例缩放后返回
+ * @description:   从一张图片中截取一部分，并将之等比例缩放后返回
  */
 
 /**

@@ -4,7 +4,7 @@
  * @author:     Panex
  * @datetime:   2016-10-30 21:01
  * @version:    0.1
- * @function:   将一张图片横纵方向独立地任意尺寸缩放
+ * @description:   将一张图片横纵方向独立地任意尺寸缩放
  */
 
 /**

@@ -4,7 +4,7 @@
  * @author:     Panex
  * @datetime:   2016-10-11 21:28
  * @version:    0.1
- * @function:   打印出一个变量的不同数据类型的转换
+ * @description:   打印出一个变量的不同数据类型的转换
  */
 
 /**

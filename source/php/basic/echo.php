@@ -4,7 +4,7 @@
  * @author:     Panex
  * @datetime:   2016-10-13 10:42
  * @version:    0.1
- * @function:   测试echo,print,print_r,var_dump,sprintf输出变量的不同
+ * @description:   测试echo,print,print_r,var_dump,sprintf输出变量的不同
  */
 
 $v = array(

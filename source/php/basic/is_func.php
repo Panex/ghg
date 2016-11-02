@@ -5,7 +5,7 @@
  * @author:     Panex
  * @datetime:   2016-10-13 14:11
  * @version:    0.0
- * @function:   使用is_null(),isset(),empty(),is_scalar()来判断不同的变量的结果，并以表格输出
+ * @description:   使用is_null(),isset(),empty(),is_scalar()来判断不同的变量的结果，并以表格输出
  */
 class Person
 {

@@ -4,7 +4,7 @@
  * @author:     Panex
  * @datetime:   2016-10-30 21:03
  * @version:    0.0
- * @function:   功能说明
+ * @description:   功能说明
  */
 require '../common.php';
 require DIR_SRC_PHP . '/gd_img/clip_image.php';

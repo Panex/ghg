@@ -4,7 +4,7 @@
  * @author:     Panex
  * @datetime:   2016-10-30 21:04
  * @version:    0.1
- * @function:   测试缩放图片尺寸的功能
+ * @description:   测试缩放图片尺寸的功能
  */
 require '../common.php';
 require DIR_SRC_PHP . '/gd_img/scale.php';
