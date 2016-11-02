@@ -1,0 +1,5 @@
+*.lnk
+.idea/
+favicon.ico
+.htaccess
+resource/
