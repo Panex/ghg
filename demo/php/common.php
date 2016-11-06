@@ -19,5 +19,6 @@ define("DIR_SRC_JS", DIR_SRC . "/js");
 define("DIR_SRC_CSS", DIR_SRC . "/css");
 
 define("DIR_RES", DIR_ROOT . "/resource");
+define("DIR_RES_JS", DIR_RES . "/js");
 define("DIR_RES_IMG", DIR_RES . "/img");
 define("DIR_RES_TTF", DIR_RES . "/ttf");

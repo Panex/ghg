@@ -3,8 +3,10 @@
  * @ide         PhpStorm.
  * @author:     Panex
  * @datetime:   2016-10-26 19:37
- * @version:    0.2
+ * @version:    0.3.5
  * @description:   遍历一个目录下的所有文件和文件夹
+ * 0.3：增加了前方文件夹前的箭头，并可输出根目录
+ *      路径字符串传入后先将反斜杠转换会正斜杠，然后会过滤掉最后方斜线
  */
 
 /**
@@ -13,6 +15,10 @@
  */
 function listDir($dir)
 {
+    //处理输入的字符串的斜杠
+    $dir = str_replace('\\', '/', $dir);
+    $dir = rtrim($dir, '/');
+
     //首先判断是否存在目录，若不存在，直接退出程序
     if (!is_dir($dir)) {
         header('Content-type:text/html;charset=utf8');
@@ -23,28 +29,51 @@ function listDir($dir)
     //给数组排序，将文件放在文件夹前，并且剔除掉每个目录的.和..
     $arr = dir_sort($dir);
 
+    //处理空文件夹的箭头标记与点击方法
+    if (count($arr) == 0) {//空文件夹不设置箭头标记类，并将点击方法置空
+        $arrow = "arrow_placeholder";
+        $onclick = '';
+    }
+    else {//非空文件夹设置箭头标记，并设置点击方法
+        $arrow = "arrow_left";
+        $onclick = "show_dir(this)";
+    }
+
+    //输出目录名
+    $root = basename($dir);
+    $root_str = <<<root
+    <div onclick='$onclick' class='dir_name' title='$root'>
+        <span class='$arrow'></span>
+        <span>$root</span>
+    </div>\n
+root;
+    echo $root_str;
+
+    //输出包裹目录内容的div
+    echo "<div class='dir' hidden>";
+
+
     //遍历目录
     foreach ($arr as $item) {
         $son = $dir . '/' . $item;
 
-        if (is_dir($son)) {//如果是文件夹，则先输出该文件夹的文件名，然后再遍历其下的文件夹
-            // $item_str = basename($item);
-            $dir_str = <<<dir
-              <div style='color: blue;'>
-              <span style='border-bottom: 1px dashed black; padding-bottom: 2px;cursor:pointer;'>
-              $item
-              </span>
-              </div>\n
-dir;
-            echo $dir_str;//输出目录名
-            echo "<div class='dir'>";
+        if (is_dir($son)) {//如果是文件夹，则遍历其下的文件夹
             listDir($son);//遍历该目录
-            echo "</div>";
         }
         else { //若是文件，则直接输出
-            echo "<div style='color:green;'>" . $item . "</div>\n";
+            $item_str = <<<str
+        <div class='file_name' title='$item'>
+            <span class='arrow_placeholder'></span>
+            <span path='$son' onclick='open_file(this)'>$item</span>
+        </div>\n
+str;
+
+            echo $item_str;
         }
     }
+
+    //关闭包裹目录内容的div
+    echo "</div>";
 }
 
 
