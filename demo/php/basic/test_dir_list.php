@@ -18,7 +18,7 @@ require '../common.php';
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>DIR LIST</title>
-    <script src="/resource/js/jquery-3.1.0.js"></script>
+	<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.js"></script>
     <script>
         function show_dir(obj) {
             //切换目录下的文件区(next('div.dir'))的展开情况
